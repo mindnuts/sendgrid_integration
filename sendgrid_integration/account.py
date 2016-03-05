@@ -9,17 +9,16 @@ UNSUBSCRIBE_LABELS = ("spam_report",
                       "bounce",
                       "unsubscribe")
 
-EVENT_TYPES = {"group_resubscribe": "Group Resubscribe",
-               "delivered": "Delivered",
-               "group_unsubscribe": "Group Unsubscribe",
-               "spam_report": "Spam Report",
-               "bounce": "Bounce",
-               "deferred": "Deferred",
-               "unsubscribe": "Unsubscribe",
-               "processed": "Processed",
-               "open": "Open",
-               "click": "Click",
-               "dropped": "Dropped",
+EVENT_TYPES = {"delivered": "Sent",
+               "group_unsubscribe": "Recipient Unsubscribed",
+               "spam_report": "Marked As Spam",
+               "bounce": "Bounced",
+               "deferred": "Delayed",
+               "unsubscribe": "Recipient Unsubscribed",
+               "processed": "Sent",
+               "open": "Opened",
+               "click": "Clicked",
+               "dropped": "Rejected",
                }
 
 
