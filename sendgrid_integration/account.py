@@ -26,7 +26,9 @@ def set_status(event_type, email, message_id):
     """
     Find the communication using message id and set delivery status.
 
-    :param event: SendGrid event received from webhook
+    :param event_type: SendGrid event type received from webhook request
+    :param email: email address received from webhook request
+    :param message_id: unuque message id received from webhook request
     """
     communication = get_communication(message_id)
 
@@ -44,7 +46,7 @@ def get_communication(message_id):
     """
     Extract message id from metadata and return communication doc.
 
-    :param event: SendGrid event received from webhook
+    :param message_id: unuque message id received from webhook request
     """
     if message_id and "@{site}".format(site=frappe.local.site) in message_id:
         communication_name = message_id.strip(" <>").split("@", 1)[0]
@@ -56,7 +58,7 @@ def set_delivery_status_and_commit(communication, event_type):
     Evaluate event type and set the delivery status of the communication.
 
     :param communication: Frappe Communication DocType
-    :param event: SendGrid evend received from webhook
+    :param event_type: SendGrid event type received from webhook request
     """
     delivery_status = EVENT_TYPES.get(event_type)
 

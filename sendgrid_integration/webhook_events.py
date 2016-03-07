@@ -50,8 +50,6 @@ def notify(sendgrid_events=None):
     if not frappe.request:
         return
 
-    from pdb import set_trace; set_trace()
-
     if not authenticate_credentials():
         raise frappe.AuthenticationError
 
@@ -101,6 +99,8 @@ def set_meta_in_email_body(email):
 
     Additional argument with message id allows to track this prticular message in
     events from event webhook. Called via app hook make_email_body_message.
+
+    :param email: Email Account doctype to take message id from
     """
     message_id = email.msg_root.get("Message-Id")
     if message_id:

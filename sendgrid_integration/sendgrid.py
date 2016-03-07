@@ -22,7 +22,11 @@ def api_url(api_endpoint):
 
 
 def auth_header(api_key):
-    """Get SendGrid authorization header for API key."""
+    """
+    Get SendGrid authorization header for API key.
+
+    :param api_key: SendGrid API key to use for authorization
+    """
     return {"Authorization": "Bearer {}".format(api_key)}
 
 
@@ -111,6 +115,7 @@ def add_webhook(api_key, webhook_post_url):
     """
     Use SendGrid API to setup events webhook for given url.
 
+    :param api_key: SendGrid API key, should be generated in SendGrid settings
     :param webhook_post_url: url for SendGrid events webhook
 
     Note that SendGrid webhooks only support basic HTTP authentication so username
@@ -150,9 +155,13 @@ def unsubscribe_emails(api_key, endpoint, batch_key="emails", remove_endpoint=No
     """
     Receive list of emails from SendGrid and unsubscribe each email.
 
-    :param email_account: Frappe DocType 'Email Account', provides SendGrid credentials
-    :param endpoint: SendGrid API endpoint to use in order to get list of emails
-    :param remove_endpoint: SendGrid API endpoint to use in order to remove email from list
+    :param api_key: SendGrid API key, should be generated in SendGrid settings
+    :param endpoint: API endpoint to use in order to get list of emails
+    :param batch_key: key to group emails and perform batch deletion with one request. If
+                      not present - each deletion will become an individual request.
+    :param remove_endpoint: API endpoint to use in order to remove email from list. If
+                            not present - endpoint for retrieval will be used as removal
+                            endpoint.
     """
     if not remove_endpoint:
         remove_endpoint = endpoint
