@@ -11,7 +11,7 @@ UNSUBSCRIBE_LABELS = ("spam_report",
 
 EVENT_TYPES = {"delivered": "Sent",
                "group_unsubscribe": "Recipient Unsubscribed",
-               "spam_report": "Marked As Spam",
+               "spamreport": "Marked As Spam",
                "bounce": "Bounced",
                "deferred": "Delayed",
                "unsubscribe": "Recipient Unsubscribed",

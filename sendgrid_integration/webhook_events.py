@@ -47,15 +47,20 @@ def notify(sendgrid_events=None):
 
     + every event will have additional argument 'message_id' with local message ID
     """
-    if not sendgrid_events:
+    if not frappe.request:
         return
+
+    from pdb import set_trace; set_trace()
 
     if not authenticate_credentials():
         raise frappe.AuthenticationError
 
-    sendgrid_events = json.loads(sendgrid_events) or []
-    for event in sendgrid_events:
-        set_status(event.get("event"), event.get("email"), event.get("message_id"))
+    try:
+        sendgrid_events = json.loads(frappe.request.data) or []
+        for event in sendgrid_events:
+            set_status(event.get("event"), event.get("email"), event.get("message_id"))
+    except ValueError:
+        frappe.errprint("Bad SendGrid webhook request")
 
 
 def authenticate_credentials():
