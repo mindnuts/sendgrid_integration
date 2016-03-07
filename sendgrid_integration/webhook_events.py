@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) 2016, Semilimes Ltd.
+# Copyright (c) 2016, Semilimes
 # MIT License. See license.txt
 
 import json
