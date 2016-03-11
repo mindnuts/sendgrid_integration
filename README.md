@@ -1,14 +1,24 @@
 ## SendGrid Integration
 
-Set communication status from SendGrid via webhooks
+Set communication status from SendGrid via webhooks.
 
-#### License
+### Installation
 
-MIT
-
-### Install
-
-1. Install Frappe Bench: https://github.com/frappe/bench
+1. Install [Frappe Bench](https://github.com/frappe/bench)
 1. Get SendGrid Integration App: `bench get-app sendgrid_integration https://github.com/semilimes/sendgrid_integration`
 1. Install it for your site: `bench --site {site_name} install-app sendgrid_integration`
 1. Restart your bench
+
+### How To Use
+
+1. Create [SendGrid](www.sendgrid.com) account
+1. Go to [API Keys](https://app.sendgrid.com/settings/api_keys) settings and generate API Key
+1. Use your SendGrid credentials and API Key to setup Email Account in Frappe
+1. SendGrid event webhook will be configured automaticly if Email Account settings are correct
+1. You can double check webhook settings in [Mail Settings](https://app.sendgrid.com/settings/mail_settings)
+
+### License
+
+MIT
+
+#### Developed by [Semilimes](www.semilimes.com), all@semilimes.com
