@@ -7,7 +7,7 @@ app_publisher = "Semilimes Ltd."
 app_description = "Set communication status from SendGrid via webhooks"
 app_icon = "octicon octicon-inbox"
 app_color = "#4CB6E6"
-app_email = "alexander.melkoff@semilimes.com"
+app_email = "all@semilimes.com"
 app_version = "0.0.1"
 
 fixtures = ["Custom Field"]
