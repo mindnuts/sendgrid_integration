@@ -65,7 +65,7 @@ def authenticate_credentials():
     """
     Process Authorization header in HTTP response according to basic HTTP authorization.
 
-    Request is stored as Wekzeug local, frappe provides access to headers.
+    Request is stored as Werkzeug local, frappe provides access to headers.
     """
     received_credentials = frappe.get_request_header("Authorization")
 
@@ -97,7 +97,7 @@ def set_meta_in_email_body(email):
     """
     Set X-SMTPAPI header in email to add unique arguments to email message.
 
-    Additional argument with message id allows to track this prticular message in
+    Additional argument with message id allows to track this particular message in
     events from event webhook. Called via app hook make_email_body_message.
 
     :param email: Email Account doctype to take message id from

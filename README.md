@@ -13,8 +13,10 @@ Set communication status from SendGrid via webhooks.
 
 1. Create [SendGrid](www.sendgrid.com) account
 1. Go to [API Keys](https://app.sendgrid.com/settings/api_keys) settings and generate API Key
+	- Give full access to 'Event Notification' and 'Mail Send'
 1. Use your SendGrid credentials and API Key to setup Email Account in Frappe
-1. SendGrid event webhook will be configured automaticly if Email Account settings are correct
+	- Check 'Login ID is different' and use your Sendgrid username as Login ID
+1. SendGrid event webhook will be configured automatically if Email Account settings are correct
 1. You can double check webhook settings in [Mail Settings](https://app.sendgrid.com/settings/mail_settings)
 
 ### License

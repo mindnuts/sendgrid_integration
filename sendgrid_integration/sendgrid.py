@@ -37,7 +37,6 @@ def handle_http_error(response):
     :param response: HTTP response to check
     """
     if response.status_code != 200:
-
         # check if there is some info about error in json format
         if response.headers.get("content-type") == "application/json":
             error_json = response.json().get("errors")
